@@ -8,6 +8,8 @@ services:
       - bundle:/usr/local/bundle
     ports:
       - "3000:3000"
+    env_file:
+      - stack.env
     environment:
       - HISTFILE=/usr/src/app/log/.bash_history 
     depends_on:
