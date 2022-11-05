@@ -1,14 +1,15 @@
 services:
   web:
+    image: altonymous/rails_7_portainer:latest
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bin/rails s -p 3000 -b '0.0.0.0'"
     volumes:
-      - .:/usr/src/app
+      - ${VOLUME_PATH:-.}:/usr/src/app
       - bundle:/usr/local/bundle
     ports:
       - "3000:3000"
     env_file:
-      - .env
+      - ${ENV_FILE:-.env}
     environment:
       - HISTFILE=/usr/src/app/log/.bash_history 
     depends_on:
@@ -31,3 +32,4 @@ volumes:
   pg_data:
   redis_data:
   bundle:
+  app:
