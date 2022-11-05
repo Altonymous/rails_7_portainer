@@ -9,7 +9,8 @@ RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
 ENV LANG=C.UTF-8 \
   BUNDLE_JOBS=4 \
   BUNDLE_RETRY=3 \
-  RAILS_ENV=production
+  RAILS_ENV=production \
+  SECRET_KEY_BASE=c447d106a0029c1ffb60b0857bb9e752c63014b2caca89809431c4943bf309b4fd609decc01502253a9f67948f1b7db58b5d3010b4c6f838c17be74b8950782a
 
 RUN gem update --system && gem install bundler
 
