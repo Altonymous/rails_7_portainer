@@ -9,7 +9,7 @@ RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
 ENV LANG=C.UTF-8 \
   BUNDLE_JOBS=4 \
   BUNDLE_RETRY=3 \
-  RAILS_ENV=production \
+  RAILS_ENV=production
 
 RUN gem update --system && gem install bundler
 
